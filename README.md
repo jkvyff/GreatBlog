@@ -1,9 +1,8 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Important: when running in production
 
-Things you may want to cover:
+- Run `rails db:mongoid:create_indexes` In order to guarantee unique titles on posts.
 
 * Ruby version
 
