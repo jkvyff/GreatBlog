@@ -1,7 +1,8 @@
 class PostsController < ApplicationController
   include ActiveModel::Validations
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
+  
   validates_presence_of :title, :body
 
   # GET /posts
