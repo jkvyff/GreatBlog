@@ -42,3 +42,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'mongo', '~> 2.2', '>= 2.2.5'
 gem 'mongoid', '~> 7.0.6'
+gem 'devise', '~> 4.2'
