@@ -43,3 +43,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'mongo', '~> 2.2', '>= 2.2.5'
 gem 'mongoid', '~> 7.0.6'
 gem 'devise', '~> 4.2'
+gem 'kaminari', '~> 1.2', '>= 1.2.1'
+gem 'kaminari-mongoid', '~> 0.1.0'
+gem 'kaminari-actionview', '~> 1.2', '>= 1.2.1'
