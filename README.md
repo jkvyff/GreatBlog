@@ -1,40 +1,49 @@
-# README
+# Great Blog
 
-Prior to getting this app Running, you must have Mongodb.
-MongoDB lost their previous tap with homebrew a couple years ago, but I know this one works.
+## System Requirements
+- Rails >= 6.0.2.2
+- Ruby 2.7.1
+- Node 12.16.1
 
-- Oct 11th, 2020
-  Start Tap
+## Database
+MongoDB
+Installing MongoDB was a bit of trouble, as they lost their previous tap with homebrew, but this recent one worked on Oct 11th, 2020
+
+* Start Tap
   `brew tap mongodb/brew`
-  Install free community edition
+* Install free community edition
   `brew install mongodb-community`
-  Start and will restart on powerdown of device
+* Start and will restart on powerdown of device
   `brew services start mongodb-community`
 
-  Start/Stop Manually On Mac
-  Start
+### start/stop manually on mac
+* Start
   `mongod --config /usr/local/etc/mongod.conf`
-  Stop
+* Stop
   `mongo admin --eval "db.shutdownServer()"`
 
-Important: when running in production
+## Starting App
+1. Start MongoDB ... see above
+2. While in project root, install gem dependencies
+ - `bundle install`
+3. If running locally, "config/mongoid.yml " should take care of configuration.
+4. If running MongoDB Atlas make sure to update the mongoid.yml following these guides.
+```yml
+development:
+  clients:
+    default:
+      uri: mongodb+srv://user:pass@yourcluster.mongodb.net/blog_development?retryWrites=true&w=majority
+      options:
+        server_selection_timeout: 5
+```
+5. Install Webpacker
+ - `rails webpacker:install`
 
+**important**
+6. When running in production or on a new instance of MongoDB
 - Run `rails db:mongoid:create_indexes` In order to guarantee unique titles on posts.
 
-* Ruby version
+7. Start the app with 
+- `rails s`
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+8. Enjoy!
