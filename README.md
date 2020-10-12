@@ -40,7 +40,8 @@ development:
  - `rails webpacker:install`
 
 **important**
-6. When running in production or on a new instance of MongoDB
+
+**6.** When running in production or on a new instance of MongoDB
 - Run `rails db:mongoid:create_indexes` In order to guarantee unique titles on posts.
 
 7. Start the app with 
