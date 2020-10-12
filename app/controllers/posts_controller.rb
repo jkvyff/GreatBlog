@@ -8,7 +8,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.page(params[:page])
+    @posts = current_user.posts.page(params[:page])
   end
 
   # GET /posts/1
