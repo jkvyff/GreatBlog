@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  include ActiveModel::Validations
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   validates_presence_of :title, :body
