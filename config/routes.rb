@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :posts
   get '/about', to: 'home#about'
   get '/home/:id', to: 'home#show'
   get '/home', to: 'home#index'
